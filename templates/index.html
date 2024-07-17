@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <title>Tquandoo</title>
+</head>
+<body>
+    <h1 class="subject">Hello Tquandoo!!!</h1>
+
+    <ul>
+        <li><a href="{{ url_for('product_list')}}">Tất cả sản phẩm</a></li>
+        {% for cat in categories %}
+            <li><a href="{{ url_for('product_list', category_id = cat.id)}}">{{ cat.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
